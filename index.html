@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queens Circle | Exklusives Management für Creatorinnen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="Logo_farbe.png" alt="Queens Circle Logo" class="nav-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#why-us">Warum wir</a></li>
+            <li><a href="#performance">Leistung</a></li>
+            <li><a href="#apply" class="btn-nav trigger-glow">Jetzt bewerben</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+            <h1 class="gold-text">Dein Imperium wartet.</h1>
+            <p class="hero-subtitle">Maximale Umsätze. Absolute Diskretion. <br>Wir managen deine Karriere auf MyDirtyHobby, VisitX & Co., während du dein Leben genießt.</p>
+            <div class="hero-trust-badges" data-aos="fade-in" data-aos-delay="500">
+                <span><i class="fa-solid fa-check-circle"></i> Geprüfter Datenschutz</span>
+                <span><i class="fa-solid fa-check-circle"></i> Transparente Abrechnung</span>
+            </div>
+            <a href="#apply" class="btn-main glow-effect">Kostenloses Erstgespräch vereinbaren</a>
+        </div>
+    </header>
+
+    <section id="why-us" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Mehr als nur Management.<br><span class="gold-text">Ein Partner auf Augenhöhe.</span></h2>
+            <div class="benefits-grid">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+                    <h3>Maximierter Umsatz</h3>
+                    <p>Wir kennen die Algorithmen und Preisstrategien. Durch unsere Optimierung verdienen unsere Creatorinnen durchschnittlich deutlich mehr – bei weniger Zeitaufwand.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-user-secret"></i>
+                    </div>
+                    <h3>Eiserne Diskretion</h3>
+                    <p>Dein Privatleben bleibt privat. Wir schützen deine Identität durch Pseudonyme, Geo-Blocking und höchste IT-Sicherheitsstandards. Vertrauen ist unsere Währung.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <h3>Premium Full-Service</h3>
+                    <p>Vom nervenaufreibenden Chat-Support (Ghostwriting) bis zum Verfassen von Dirty Stories: Wir übernehmen die operative Arbeit komplett für dich.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="performance" class="performance-banner" data-aos="zoom-in">
+        <div class="container banner-content">
+           <i class="fa-solid fa-chart-line banner-icon"></i>
+           <h2>Unser Fokus: <span class="gold-text">Deine Performance.</span></h2>
+           <p>Wir arbeiten erfolgsbasiert. Wir verdienen nur, wenn du verdienst. Unsere Motivation ist dein maximaler Erfolg.</p>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section-padding section-darker">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Der Weg in den Inner Circle</h2>
+            <div class="steps-grid">
+                <div class="step" data-aos="fade-right" data-aos-delay="100">
+                    <span class="step-number">01</span>
+                    <h3>Diskrete Bewerbung</h3>
+                    <p>Fülle das Formular unten aus. Deine Daten sind bei uns sicher.</p>
+                </div>
+                <div class="step" data-aos="fade-right" data-aos-delay="300">
+                    <span class="step-number">02</span>
+                    <h3>Strategie-Gespräch</h3>
+                    <p>Wir lernen uns kennen und besprechen deine Ziele und Grenzen.</p>
+                </div>
+                <div class="step" data-aos="fade-right" data-aos-delay="500">
+                    <span class="step-number">03</span>
+                    <h3>Setup & Durchstarten</h3>
+                    <p>Wir übernehmen die Technik. Du konzentrierst dich auf den Content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="section-padding overlay-bg">
+        <div class="container form-container" data-aos="flip-up" data-aos-duration="1000">
+            <h2 class="section-title gold-text">Bereit für das nächste Level?</h2>
+            <p class="form-subtitle">Bewirb dich jetzt für eine exklusive Zusammenarbeit. Plätze sind limitiert, um höchste Betreuungsqualität zu sichern.</p>
+            
+            <form action="FORM_ACTION_URL" method="POST">
+                <div class="form-row">
+                    <div class="form-group icon-input">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" name="name" required placeholder="Vorname / Künstlername">
+                    </div>
+                    <div class="form-group icon-input">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" name="email" required placeholder="Deine E-Mail Adresse">
+                    </div>
+                </div>
+
+                <div class="form-group icon-input">
+                    <i class="fa-brands fa-instagram"></i>
+                    <input type="text" id="social" name="social" placeholder="Instagram / Social Media (Optional)">
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="4" placeholder="Deine aktuelle Situation oder Fragen an uns..."></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="age-check" name="age-check" required>
+                    <label for="age-check">Ich bestätige, dass ich mindestens 18 Jahre alt bin.</label>
+                </div>
+
+                <button type="submit" class="btn-submit glow-effect">Jetzt unverbindlich bewerben <i class="fa-solid fa-arrow-right"></i></button>
+                <p class="form-disclaimer"><i class="fa-solid fa-lock"></i> Deine Daten werden 100% vertraulich behandelt und SSL-verschlüsselt übertragen.</p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <img src="logo-queens-circle.png" alt="Queens Circle Logo" class="footer-logo">
+            
+            <div class="footer-links">
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutz</a>
+                <a href="#apply">Kontakt</a>
+            </div>
+            <p class="copyright">&copy; 2024 Queens Circle – Dargelis & Goebel GbR. All Rights Reserved. <br>Exklusives Management für Adult Content Creator.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialisiert die Animationen
+        AOS.init({
+            once: true, // Animationen passieren nur einmal beim runterscrollen
+            offset: 100 // Startet die Animation etwas früher
+        });
+    </script>
+
+</body>
+</html>
