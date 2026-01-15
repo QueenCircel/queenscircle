@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queens Circle | Unsere Models & Erfolgsgeschichten</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Grid Layout für die Models */
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .model-card {
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .model-image-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .model-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .model-card:hover .model-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay für Diskretions-Effekt (Optional) */
+        .privacy-blur {
+            filter: blur(5px); /* Falls du Models anonym zeigen willst */
+        }
+
+        .model-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .model-name {
+            color: #d4af37; /* Dein Gold-Ton */
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .model-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 0.5rem 0;
+        }
+
+        .stat-item {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .stat-item i {
+            color: #d4af37;
+            margin-right: 5px;
+        }
+
+        .model-quote {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 1rem;
+        }
+
+        .disclaimer-box {
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 3px solid #d4af37;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <a href="index.html"><img src="Logo_farbe.png" alt="Queens Circle Logo" class="nav-logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="models.html" class="active-link" style="color: #d4af37;">Unsere Models</a></li>
+            <li><a href="index.html#why-us">Warum wir</a></li>
+            <li><a href="index.html#performance">Leistung</a></li>
+            <li><a href="index.html#apply" class="btn-nav trigger-glow">Jetzt bewerben</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" style="min-height: 50vh; align-items: center;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-down">
+            <h1 class="gold-text">Der Inner Circle.</h1>
+            <p class="hero-subtitle">Erfolg spricht für sich. Hier sind einige der Creatorinnen, <br>die wir auf dem Weg an die Spitze begleiten.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            
+            <div class="disclaimer-box" data-aos="fade-right">
+                <i class="fa-solid fa-lock"></i> <strong>Hinweis zur Diskretion:</strong> 
+                Der Großteil unserer Partnerinnen arbeitet unter strenger Anonymität. Die hier gezeigten Profile sind Creatorinnen, die einer öffentlichen Darstellung (ganz oder teilweise) zugestimmt haben oder unter ihrem Künstlernamen auftreten.
+            </div>
+
+            <h2 class="section-title" data-aos="fade-up">Ausgewählte <span class="gold-text">Talente</span></h2>
+
+            <div class="models-grid">
+                
+                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="model-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Model Vanessa">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Vanessa L.</h3>
+                        <p class="category">Fashion & Lifestyle Nische</p>
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-fire"></i> Top 1%</span>
+                            <span class="stat-item"><i class="fa-solid fa-check"></i> MDH & OF</span>
+                        </div>
+                        <p class="model-quote">"Seit ich beim Queens Circle bin, hat sich mein Umsatz verdreifacht – und ich habe endlich wieder Freizeit."</p>
+                    </div>
+                </div>
+
+                <div class="model-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="model-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Model Sarah">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Sarah "Kitty"</h3>
+                        <p class="category">Fetisch & Chat Fokus</p>
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-chart-line"></i> +400% Growth</span>
+                            <span class="stat-item"><i class="fa-solid fa-check"></i> VisitX</span>
+                        </div>
+                        <p class="model-quote">"Das Ghostwriting-Team ist der Wahnsinn. Meine Fans merken keinen Unterschied, und die Kasse klingelt."</p>
+                    </div>
+                </div>
+
+                <div class="model-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="model-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Anonymes Model" style="filter: brightness(0.6) blur(2px);">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Miss M.</h3>
+                        <p class="category">High Class & Anonym</p>
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-globe"></i> Geo-Blocked</span>
+                            <span class="stat-item"><i class="fa-solid fa-check"></i> Exclusive</span>
+                        </div>
+                        <p class="model-quote">"Niemand in meinem Umfeld weiß davon. Queens Circle garantiert mir absolute Sicherheit bei maximalem Gewinn."</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding section-darker" style="text-align: center;">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="section-title">Werde die <span class="gold-text">nächste Erfolgsstory</span></h2>
+            <p style="margin-bottom: 2rem; color: #ccc;">Wir haben noch Kapazitäten für 3 exklusive Neuzugänge diesen Monat.</p>
+            <a href="index.html#apply" class="btn-main glow-effect">Jetzt bewerben <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <img src="Logo_farbe.png" alt="Queens Circle Logo" class="footer-logo">
+            
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="index.html#apply">Kontakt</a>
+            </div>
+            <p class="copyright">&copy; 2024 Queens Circle – Dargelis & Goebel GbR. All Rights Reserved. <br>Exklusives Management für Adult Content Creator.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
