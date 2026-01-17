@@ -1,3 +1,31 @@
+Notepad++ v8.9 security enhancement, new improvements, regression fixes & bug-fixes:
+
+0. Remove Notepad++ self-singed certificate signature, use only the certificate issued by GlobalSign.
+1. Log security errors automatically while auto-updating in "%LOCALAPPDATA%\Notepad++\log\securityError.log".
+2. Fix jarring color regression in dark mode (introduced in v8.8.9).
+3. Fix "/noUpdater" installer option not working if updater was previously installed.
+4. Fix column mode edit undo regression (introduced in v8.8.9).
+5. Fix issue where an empty file opened without encoding under a UTF-8 system codepage.
+6. Add makefile function list parser.
+7. Improve performance & add missing file ext. from langs.model.xml to langs.xml.
+8. Improve "Open containing folder in Explorer" command to avoid creating Explorer process.
+9. Allow refresh mouse scroll amount according to OS settings changes.
+
+
+Get more info on
+https://notepad-plus-plus.org/downloads/v8.9/
+
+
+Included plugins:
+
+ 1.  NppExport v0.4
+ 2.  Converter v4.7
+ 3.  Mime Tool v3.1
+
+
+Updater (Installer only):
+
+* WinGUp (for Notepad++) v5.3.9
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -175,8 +203,8 @@
         <img src="Vanessa_Vorschau.jpg" alt="Model Vanessa">
     </div>
     <div class="model-info">
-        <h3 class="model-name">Vanessa L.</h3>
-        <p class="category">Fashion & Lifestyle Nische</p>
+        <h3 class="model-name">Lola Lux</h3>
+        <p class="category">'03 | Dortmund </p>
         
         <div class="model-services">
             <div class="service-item active" title="Webcam">
@@ -188,13 +216,13 @@
             <div class="service-item active" title="Fotosets">
                 <i class="fa-solid fa-camera"></i>
             </div>
-            <div class="service-item inactive" title="Kein Verkauf / Physicals">
+            <div class="service-item active" title="Kein Verkauf / Physicals">
                 <i class="fa-solid fa-bag-shopping"></i>
             </div>
         </div>
         <div class="model-stats">
             <span class="stat-item"><i class="fa-solid fa-fire"></i> Top 5%</span>
-            <span class="stat-item"><i class="fa-solid fa-check"></i> MDH & OF</span>
+            <span class="stat-item"><i class="fa-solid fa-crown"></i> High Performer</span>
         </div>
         <p class="model-quote">"Seit ich beim Queens Circle bin, hat sich mein Umsatz verdreifacht – und ich habe endlich wieder Freizeit."</p>
     </div>
@@ -247,11 +275,12 @@
             <img src="Logo_farbe.png" alt="Queens Circle Logo" class="footer-logo">
             
             <div class="footer-links">
+                <a href="index.html">Zurück</a>			
                 <a href="impressum.html">Impressum</a>
                 <a href="datenschutz.html">Datenschutz</a>
                 <a href="index.html#apply">Kontakt</a>
             </div>
-            <p class="copyright">&copy; 2024 Queens Circle – Dargelis & Goebel GbR. All Rights Reserved. <br>Exklusives Management für Adult Content Creator.</p>
+            <p class="copyright">&copy; Queens Circle – Dargelis & Goebel GbR. All Rights Reserved. <br>Exklusives Management für Adult Content Creator.</p>
         </div>
     </footer>
 
