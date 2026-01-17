@@ -12,6 +12,36 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Container für die Icons */
+.model-services {
+    display: flex;
+    justify-content: center; /* Oder flex-start, je nach Geschmack */
+    gap: 15px;
+    margin: 10px 0;
+    padding: 5px 0;
+    border-top: 1px solid #eee; /* Leichte Trennlinie oben */
+    border-bottom: 1px solid #eee; /* Leichte Trennlinie unten */
+}
+
+/* Basis-Styling für das Icon */
+.service-item {
+    font-size: 1.2rem;
+    cursor: help; /* Zeigt Fragezeichen beim Drüberfahren */
+    transition: all 0.3s ease;
+}
+
+/* WENN DAS MODEL DEN SERVICE ANBIETET (Aktiv) */
+.service-item.active {
+    color: #d4af37; /* Gold-Ton (passend zu "Queens Circle") oder nutze #2ecc71 für Grün */
+    opacity: 1;
+}
+
+/* WENN DAS MODEL DEN SERVICE NICHT ANBIETET (Inaktiv) */
+.service-item.inactive {
+    color: #ccc; /* Helles Grau */
+    opacity: 0.4;
+    text-decoration: line-through; /* Optional: Durchstreichen */
+}
         /* Grid Layout für die Models */
         .models-grid {
             display: grid;
@@ -140,20 +170,35 @@
 
             <div class="models-grid">
                 
-                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="model-image-wrapper">
-                        <img src="Vanessa_Vorschau.jpg" alt="Model Vanessa">
-                    </div>
-                    <div class="model-info">
-                        <h3 class="model-name">Vanessa L.</h3>
-                        <p class="category">Fashion & Lifestyle Nische</p>
-                        <div class="model-stats">
-                            <span class="stat-item"><i class="fa-solid fa-fire"></i> Top 1%</span>
-                            <span class="stat-item"><i class="fa-solid fa-check"></i> MDH & OF</span>
-                        </div>
-                        <p class="model-quote">"Seit ich beim Queens Circle bin, hat sich mein Umsatz verdreifacht – und ich habe endlich wieder Freizeit."</p>
-                    </div>
-                </div>
+<div class="model-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="model-image-wrapper">
+        <img src="Vanessa_Vorschau.jpg" alt="Model Vanessa">
+    </div>
+    <div class="model-info">
+        <h3 class="model-name">Vanessa L.</h3>
+        <p class="category">Fashion & Lifestyle Nische</p>
+        
+        <div class="model-services">
+            <div class="service-item active" title="Webcam">
+                <i class="fa-solid fa-video"></i>
+            </div>
+            <div class="service-item active" title="Videos / Clips">
+                <i class="fa-solid fa-film"></i>
+            </div>
+            <div class="service-item active" title="Fotosets">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+            <div class="service-item inactive" title="Kein Verkauf / Physicals">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </div>
+        <div class="model-stats">
+            <span class="stat-item"><i class="fa-solid fa-fire"></i> Top 5%</span>
+            <span class="stat-item"><i class="fa-solid fa-check"></i> MDH & OF</span>
+        </div>
+        <p class="model-quote">"Seit ich beim Queens Circle bin, hat sich mein Umsatz verdreifacht – und ich habe endlich wieder Freizeit."</p>
+    </div>
+</div>
 
                 <div class="model-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="model-image-wrapper">
