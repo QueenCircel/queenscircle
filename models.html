@@ -1,37 +1,9 @@
-Notepad++ v8.9 security enhancement, new improvements, regression fixes & bug-fixes:
-
-0. Remove Notepad++ self-singed certificate signature, use only the certificate issued by GlobalSign.
-1. Log security errors automatically while auto-updating in "%LOCALAPPDATA%\Notepad++\log\securityError.log".
-2. Fix jarring color regression in dark mode (introduced in v8.8.9).
-3. Fix "/noUpdater" installer option not working if updater was previously installed.
-4. Fix column mode edit undo regression (introduced in v8.8.9).
-5. Fix issue where an empty file opened without encoding under a UTF-8 system codepage.
-6. Add makefile function list parser.
-7. Improve performance & add missing file ext. from langs.model.xml to langs.xml.
-8. Improve "Open containing folder in Explorer" command to avoid creating Explorer process.
-9. Allow refresh mouse scroll amount according to OS settings changes.
-
-
-Get more info on
-https://notepad-plus-plus.org/downloads/v8.9/
-
-
-Included plugins:
-
- 1.  NppExport v0.4
- 2.  Converter v4.7
- 3.  Mime Tool v3.1
-
-
-Updater (Installer only):
-
-* WinGUp (for Notepad++) v5.3.9
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queens Circle | Unsere Models & Erfolgsgeschichten</title>
+    <title>Queens Circle | Success Stories</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -41,126 +13,138 @@ Updater (Installer only):
 
     <style>
         /* Container für die Icons */
-.model-services {
-    display: flex;
-    justify-content: center; /* Oder flex-start, je nach Geschmack */
-    gap: 15px;
-    margin: 10px 0;
-    padding: 5px 0;
-    border-top: 1px solid #eee; /* Leichte Trennlinie oben */
-    border-bottom: 1px solid #eee; /* Leichte Trennlinie unten */
-}
+        .model-services {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+            padding: 10px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-/* Basis-Styling für das Icon */
-.service-item {
-    font-size: 1.2rem;
-    cursor: help; /* Zeigt Fragezeichen beim Drüberfahren */
-    transition: all 0.3s ease;
-}
+        /* Basis-Styling für das Icon */
+        .service-item {
+            font-size: 1.1rem;
+            cursor: help;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        /* Tooltip-Verbesserung (Optional, für Desktop) */
+        .service-item:hover {
+            transform: scale(1.2);
+        }
 
-/* WENN DAS MODEL DEN SERVICE ANBIETET (Aktiv) */
-.service-item.active {
-    color: #d4af37; /* Gold-Ton (passend zu "Queens Circle") oder nutze #2ecc71 für Grün */
-    opacity: 1;
-}
+        .service-item.active {
+            color: #d4af37;
+            opacity: 1;
+            filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.5));
+        }
 
-/* WENN DAS MODEL DEN SERVICE NICHT ANBIETET (Inaktiv) */
-.service-item.inactive {
-    color: #ccc; /* Helles Grau */
-    opacity: 0.4;
-    text-decoration: line-through; /* Optional: Durchstreichen */
-}
-        /* Grid Layout für die Models */
+        .service-item.inactive {
+            color: #666;
+            opacity: 0.3;
+        }
+
+        /* Grid Layout */
         .models-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .model-card {
-            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            border-radius: 10px;
+            background: linear-gradient(145deg, #151515, #0a0a0a);
+            border: 1px solid rgba(255, 215, 0, 0.05);
+            border-radius: 15px;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .model-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(255, 215, 0, 0.5);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
         .model-image-wrapper {
             width: 100%;
-            height: 350px;
+            height: 400px;
             overflow: hidden;
-            position: relative;
         }
 
         .model-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            object-position: top center; /* Wichtig für Portraits */
+            transition: transform 0.6s ease;
         }
 
         .model-card:hover .model-image-wrapper img {
-            transform: scale(1.05);
-        }
-
-        /* Overlay für Diskretions-Effekt (Optional) */
-        .privacy-blur {
-            filter: blur(5px); /* Falls du Models anonym zeigen willst */
+            transform: scale(1.08);
         }
 
         .model-info {
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             text-align: center;
         }
 
         .model-name {
-            color: #d4af37; /* Dein Gold-Ton */
-            font-size: 1.5rem;
+            color: #d4af37;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .category {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
         }
 
         .model-stats {
             display: flex;
-            justify-content: space-around;
-            margin: 1rem 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding: 0.5rem 0;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+            background: rgba(255,255,255,0.03);
+            padding: 10px;
+            border-radius: 8px;
         }
 
         .stat-item {
-            font-size: 0.9rem;
-            color: #ccc;
+            font-size: 0.85rem;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .stat-item i {
             color: #d4af37;
-            margin-right: 5px;
         }
 
         .model-quote {
+            font-family: 'Times New Roman', serif;
             font-style: italic;
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 1rem;
+            font-size: 1rem;
+            color: #aaa;
+            line-height: 1.6;
         }
 
         .disclaimer-box {
-            background: rgba(255, 215, 0, 0.05);
-            border-left: 3px solid #d4af37;
-            padding: 1rem;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: #ccc;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.1), transparent);
+            border-left: 4px solid #d4af37;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            border-radius: 0 10px 10px 0;
         }
     </style>
 </head>
@@ -171,18 +155,18 @@ Updater (Installer only):
             <a href="index.html"><img src="Logo_farbe.png" alt="Queens Circle Logo" class="nav-logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="models.html" class="active-link" style="color: #d4af37;">Unsere Models</a></li>
-            <li><a href="index.html#why-us">Warum wir</a></li>
+            <li><a href="models.html" class="active-link" style="color: #d4af37;">Success Stories</a></li>
+            <li><a href="index.html#why-us">Dein Vorteil</a></li>
             <li><a href="index.html#performance">Leistung</a></li>
             <li><a href="index.html#apply" class="btn-nav trigger-glow">Jetzt bewerben</a></li>
         </ul>
     </nav>
 
-    <header class="hero" style="min-height: 50vh; align-items: center;">
+    <header class="hero" style="min-height: 50vh; align-items: center; background-position: center;">
         <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="fade-down">
-            <h1 class="gold-text">Der Inner Circle.</h1>
-            <p class="hero-subtitle">Erfolg spricht für sich. Hier sind einige der Creatorinnen, <br>die wir auf dem Weg an die Spitze begleiten.</p>
+            <h1 class="gold-text">Das könntest du sein.</h1>
+            <p class="hero-subtitle">Vom Studentenjob zur finanziellen Freiheit. Von der Büroangestellten zur Weltenbummlerin. <br>Hier sind echte Frauen, die den Schritt gewagt haben.</p>
         </div>
     </header>
 
@@ -190,193 +174,152 @@ Updater (Installer only):
         <div class="container">
             
             <div class="disclaimer-box" data-aos="fade-right">
-                <i class="fa-solid fa-lock"></i> <strong>Hinweis zur Diskretion:</strong> 
-                Der Großteil unserer Partnerinnen arbeitet unter strenger Anonymität. Die hier gezeigten Profile sind Creatorinnen, die einer öffentlichen Darstellung zugestimmt haben oder unter ihrem Künstlernamen auftreten.
+                <i class="fa-solid fa-user-secret" style="margin-right: 10px; font-size: 1.2rem;"></i> 
+                <strong>100% Anonymität:</strong> 
+                Der Großteil unserer Partnerinnen arbeitet unerkannt. Die folgenden Creatorinnen haben einer öffentlichen Darstellung zugestimmt. Du entscheidest, ob du dein Gesicht zeigst oder als "Faceless Creator" im Verborgenen agierst.
             </div>
 
-            <h2 class="section-title" data-aos="fade-up">Ausgewählte <span class="gold-text">Talente</span></h2>
+            <h2 class="section-title" data-aos="fade-up">Diese Frauen <span class="gold-text">leben deinen Traum</span></h2>
 
             <div class="models-grid">
                 
-<div class="model-card" data-aos="fade-up" data-aos-delay="100">
-    <div class="model-image-wrapper">
-        <img src="Lola Lux.png" alt="Model Lola Lux">
-    </div>
-    <div class="model-info">
-        <h3 class="model-name">Lola Lux</h3>
-        <p class="category">Jahrgang '98 • Berlin</p>
-        
-        <div class="model-services">
-            <div class="service-item inactive" title="Webcam - Shows">
-                <i class="fa-solid fa-video"></i>
-            </div>
-            <div class="service-item active" title="Videos / Filme">
-                <i class="fa-solid fa-film"></i>
-            </div>
-            <div class="service-item active" title="Fotos / Bilder">
-                <i class="fa-solid fa-camera"></i>
-            </div>
-            <div class="service-item inactive" title="Verkauf von Waren">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-        </div>
-        <div class="model-stats">
- <span class="stat-item"><i class="fa-solid fa-chart-line"></i> Umsatz x3</span>
-        <span class="stat-item"><i class="fa-solid fa-hourglass-half"></i> 20h Woche</span>
-		</div>
-        <p class="model-quote">"Seit ich beim Queens Circle bin, hat sich mein Umsatz verdreifacht – und ich habe endlich wieder Wochenenden."</p>
-    </div>
-</div>
+                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="model-image-wrapper">
+                        <img src="Lola Lux.png" alt="Model Lola Lux">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Lola Lux</h3>
+                        <p class="category">Jahrgang '98 • Berlin</p>
+                        
+                        <div class="model-services">
+                            <div class="service-item inactive" title="Webcam - Shows"><i class="fa-solid fa-video"></i></div>
+                            <div class="service-item active" title="Videos / Filme"><i class="fa-solid fa-film"></i></div>
+                            <div class="service-item active" title="Fotos / Bilder"><i class="fa-solid fa-camera"></i></div>
+                            <div class="service-item inactive" title="Verkauf von Waren"><i class="fa-solid fa-bag-shopping"></i></div>
+                        </div>
+                        
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-chart-line"></i> Umsatz x3</span>
+                            <span class="stat-item"><i class="fa-solid fa-hourglass-half"></i> 20h Woche</span>
+                        </div>
+                        <p class="model-quote">"Seit ich beim Queens Circle bin, hat sich mein Umsatz verdreifacht – und ich habe endlich wieder Wochenenden."</p>
+                    </div>
+                </div>
 
-<div class="model-card" data-aos="fade-up" data-aos-delay="100">
-    <div class="model-image-wrapper">
-        <img src="Velvet Rose.png" alt="Model Velvet Rose">
-    </div>
-    <div class="model-info">
-        <h3 class="model-name">Velvet Rose</h3>
-        <p class="category">Jahrgang '** • ****</p>
-        
-        <div class="model-services">
-            <div class="service-item active" title="Webcam - Shows">
-                <i class="fa-solid fa-video"></i>
-            </div>
-            <div class="service-item active" title="Videos / Filme">
-                <i class="fa-solid fa-film"></i>
-            </div>
-            <div class="service-item active" title="Fotos / Bilder">
-                <i class="fa-solid fa-camera"></i>
-            </div>
-            <div class="service-item inactive" title="Verkauf von Waren">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-        </div>
-        <div class="model-stats">
-            <span class="stat-item"><i class="fa-solid fa-trophy"></i> Top Newcomer</span>
-        <span class="stat-item"><i class="fa-solid fa-graduation-cap"></i> Studium finanziert</span>
-		</div>
-        <p class="model-quote">"Ich wollte mein Studium finanzieren, jetzt verdiene ich mehr als meine Dozenten. Die Betreuung ist 1A."</p>
-    </div>
-</div>
+                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="model-image-wrapper">
+                        <img src="Velvet Rose.png" alt="Model Velvet Rose">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Velvet Rose</h3>
+                        <p class="category">Jahrgang '01 • Hamburg</p>
+                        
+                        <div class="model-services">
+                            <div class="service-item active" title="Webcam - Shows"><i class="fa-solid fa-video"></i></div>
+                            <div class="service-item active" title="Videos / Filme"><i class="fa-solid fa-film"></i></div>
+                            <div class="service-item active" title="Fotos / Bilder"><i class="fa-solid fa-camera"></i></div>
+                            <div class="service-item inactive" title="Verkauf von Waren"><i class="fa-solid fa-bag-shopping"></i></div>
+                        </div>
+                        
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-trophy"></i> Top Newcomer</span>
+                            <span class="stat-item"><i class="fa-solid fa-graduation-cap"></i> Studium finanziert</span>
+                        </div>
+                        <p class="model-quote">"Ich wollte mein Studium finanzieren, jetzt verdiene ich mehr als meine Dozenten. Die Betreuung ist 1A."</p>
+                    </div>
+                </div>
 
-<div class="model-card" data-aos="fade-up" data-aos-delay="100">
-    <div class="model-image-wrapper">
-        <img src="Roxy Wild.png" alt="Model Roxy Wild">
-    </div>
-    <div class="model-info">
-        <h3 class="model-name">Roxy Wild</h3>
-        <p class="category">Jahrgang '95 • München</p>
-        
-        <div class="model-services">
-            <div class="service-item inactive" title="Webcam - Shows">
-                <i class="fa-solid fa-video"></i>
-            </div>
-            <div class="service-item active" title="Videos / Filme">
-                <i class="fa-solid fa-film"></i>
-            </div>
-            <div class="service-item active" title="Fotos / Bilder">
-                <i class="fa-solid fa-camera"></i>
-            </div>
-            <div class="service-item active" title="Verkauf von Waren">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-        </div>
-        <div class="model-stats">
-            <span class="stat-item"><i class="fa-solid fa-crown"></i> Hochpreisig</span>
-        <span class="stat-item"><i class="fa-solid fa-star"></i> Markenaufbau</span>
-		</div>
-        <p class="model-quote">"Queens Circle hat aus meinem Hobby eine echte Marke gemacht. Ich arbeite weniger, aber verdiene Premium-Preise."</p>
-    </div>
-</div>
+                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="model-image-wrapper">
+                        <img src="Roxy Wild.png" alt="Model Roxy Wild">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Roxy Wild</h3>
+                        <p class="category">Jahrgang '95 • München</p>
+                        
+                        <div class="model-services">
+                            <div class="service-item inactive" title="Webcam - Shows"><i class="fa-solid fa-video"></i></div>
+                            <div class="service-item active" title="Videos / Filme"><i class="fa-solid fa-film"></i></div>
+                            <div class="service-item active" title="Fotos / Bilder"><i class="fa-solid fa-camera"></i></div>
+                            <div class="service-item active" title="Verkauf von Waren"><i class="fa-solid fa-bag-shopping"></i></div>
+                        </div>
+                        
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-crown"></i> Hochpreisig</span>
+                            <span class="stat-item"><i class="fa-solid fa-star"></i> Markenaufbau</span>
+                        </div>
+                        <p class="model-quote">"Queens Circle hat aus meinem Hobby eine echte Marke gemacht. Ich arbeite weniger, aber verdiene Premium-Preise."</p>
+                    </div>
+                </div>
 
-<div class="model-card" data-aos="fade-up" data-aos-delay="100">
-    <div class="model-image-wrapper">
-        <img src="Mia Summer.png" alt="Model Mia Summer">
-    </div>
-    <div class="model-info">
-        <h3 class="model-name">Mia Summer</h3>
-        <p class="category">Jahrgang '** • Aktuell: Bali</p>
-        
-        <div class="model-services">
-            <div class="service-item inactive" title="Webcam - Shows">
-                <i class="fa-solid fa-video"></i>
-            </div>
-            <div class="service-item active" title="Videos / Filme">
-                <i class="fa-solid fa-film"></i>
-            </div>
-            <div class="service-item active" title="Fotos / Bilder">
-                <i class="fa-solid fa-camera"></i>
-            </div>
-            <div class="service-item inactive" title="Verkauf von Waren">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-        </div>
-        <div class="model-stats">
-            <span class="stat-item"><i class="fa-solid fa-plane"></i> Ortsunabhängig</span>
-        <span class="stat-item"><i class="fa-solid fa-globe"></i> International</span>
-		</div>
-        <p class="model-quote">"Mein Büro ist heute am Strand. Dank der Agentur läuft das Marketing im Hintergrund, egal wo ich gerade bin."</p>
-    </div>
-</div>
+                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="model-image-wrapper">
+                        <img src="Mia Summer.png" alt="Model Mia Summer">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Mia Summer</h3>
+                        <p class="category">Jahrgang '99 • Aktuell: Bali</p>
+                        
+                        <div class="model-services">
+                            <div class="service-item inactive" title="Webcam - Shows"><i class="fa-solid fa-video"></i></div>
+                            <div class="service-item active" title="Videos / Filme"><i class="fa-solid fa-film"></i></div>
+                            <div class="service-item active" title="Fotos / Bilder"><i class="fa-solid fa-camera"></i></div>
+                            <div class="service-item inactive" title="Verkauf von Waren"><i class="fa-solid fa-bag-shopping"></i></div>
+                        </div>
+                        
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-plane"></i> Ortsunabhängig</span>
+                            <span class="stat-item"><i class="fa-solid fa-globe"></i> International</span>
+                        </div>
+                        <p class="model-quote">"Mein Büro ist heute am Strand. Dank der Agentur läuft das Marketing im Hintergrund, egal wo ich gerade bin."</p>
+                    </div>
+                </div>
 
-<div class="model-card" data-aos="fade-up" data-aos-delay="100">
-    <div class="model-image-wrapper">
-        <img src="Cherry Crush.png" alt="Model Cherry Crush">
-    </div>
-    <div class="model-info">
-        <h3 class="model-name">Cherry Crush</h3>
-        <p class="category">Jahrgang '92 • Köln</p>
-        
-        <div class="model-services">
-            <div class="service-item active" title="Webcam - Shows">
-                <i class="fa-solid fa-video"></i>
-            </div>
-            <div class="service-item active" title="Videos / Filme">
-                <i class="fa-solid fa-film"></i>
-            </div>
-            <div class="service-item active" title="Fotos / Bilder">
-                <i class="fa-solid fa-camera"></i>
-            </div>
-            <div class="service-item active" title="Verkauf von Waren">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-        </div>
-        <div class="model-stats">
-           <span class="stat-item"><i class="fa-solid fa-fire"></i> Top 5% Newcomer-Creator</span>
-        <span class="stat-item"><i class="fa-solid fa-heart"></i> Hohe Fan-Bindung</span>
-		</div>
-        <p class="model-quote">"Ich dachte, meine Nische ist zu speziell. Die Agentur hat mir gezeigt, wie ich genau das zu Gold mache."</p>
-    </div>
-</div>
+                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="model-image-wrapper">
+                        <img src="Cherry Crush.png" alt="Model Cherry Crush">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Cherry Crush</h3>
+                        <p class="category">Jahrgang '92 • Köln</p>
+                        
+                        <div class="model-services">
+                            <div class="service-item active" title="Webcam - Shows"><i class="fa-solid fa-video"></i></div>
+                            <div class="service-item active" title="Videos / Filme"><i class="fa-solid fa-film"></i></div>
+                            <div class="service-item active" title="Fotos / Bilder"><i class="fa-solid fa-camera"></i></div>
+                            <div class="service-item active" title="Verkauf von Waren"><i class="fa-solid fa-bag-shopping"></i></div>
+                        </div>
+                        
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-fire"></i> Top 1% Creator</span>
+                            <span class="stat-item"><i class="fa-solid fa-heart"></i> Hohe Fan-Bindung</span>
+                        </div>
+                        <p class="model-quote">"Ich dachte, meine Nische ist zu speziell. Die Agentur hat mir gezeigt, wie ich genau das zu Gold mache."</p>
+                    </div>
+                </div>
 
-<div class="model-card" data-aos="fade-up" data-aos-delay="100">
-    <div class="model-image-wrapper">
-        <img src="Jade Vixen.png" alt="Model Jade Vixen">
-    </div>
-    <div class="model-info">
-        <h3 class="model-name">Jade Vixen</h3>
-        <p class="category">Jahrgang '03 • Düsseldorf</p>
-        
-        <div class="model-services">
-            <div class="service-item inactive" title="Webcam - Shows">
-                <i class="fa-solid fa-video"></i>
-            </div>
-            <div class="service-item active" title="Videos / Filme">
-                <i class="fa-solid fa-film"></i>
-            </div>
-            <div class="service-item active" title="Fotos / Bilder">
-                <i class="fa-solid fa-camera"></i>
-            </div>
-            <div class="service-item inactive" title="Verkauf von Waren">
-                <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-        </div>
-        <div class="model-stats">
-            <span class="stat-item"><i class="fa-solid fa-rocket"></i> 0 auf 5k in 3 Monaten</span>
-        <span class="stat-item"><i class="fa-solid fa-mobile-screen"></i> Social Media Star</span>
-		</div>
-        <p class="model-quote">"Ich hatte keine Ahnung von Technik oder Steuern. Queens Circle hat mir alles abgenommen. Start war mega einfach!"</p>
-    </div>
-</div>
+                <div class="model-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="model-image-wrapper">
+                        <img src="Jade Vixen.png" alt="Model Jade Vixen">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Jade Vixen</h3>
+                        <p class="category">Jahrgang '03 • Düsseldorf</p>
+                        
+                        <div class="model-services">
+                            <div class="service-item inactive" title="Webcam - Shows"><i class="fa-solid fa-video"></i></div>
+                            <div class="service-item active" title="TikTok / Reels"><i class="fa-solid fa-film"></i></div>
+                            <div class="service-item active" title="Insta-Style"><i class="fa-solid fa-camera"></i></div>
+                            <div class="service-item inactive" title="Verkauf von Waren"><i class="fa-solid fa-bag-shopping"></i></div>
+                        </div>
+                        
+                        <div class="model-stats">
+                            <span class="stat-item"><i class="fa-solid fa-rocket"></i> 0 auf 5k in 4 Wochen</span>
+                            <span class="stat-item"><i class="fa-solid fa-mobile-screen"></i> Social Media Star</span>
+                        </div>
+                        <p class="model-quote">"Ich hatte keine Ahnung von Technik oder Steuern. Queens Circle hat mir alles abgenommen. Start war mega einfach!"</p>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -385,7 +328,7 @@ Updater (Installer only):
     <section class="section-padding section-darker" style="text-align: center;">
         <div class="container" data-aos="zoom-in">
             <h2 class="section-title">Werde die <span class="gold-text">nächste Erfolgsstory</span></h2>
-            <p style="margin-bottom: 2rem; color: #ccc;">Wir haben noch Kapazitäten für <strong>3</strong> exklusive Neuzugänge diesen Monat.</p>
+            <p style="margin-bottom: 2rem; color: #ccc; font-size: 1.1rem;">Wir haben aktuell Kapazitäten für <strong>2</strong> exklusive Neuzugänge diesen Monat.</p>
             <a href="index.html#apply" class="btn-main glow-effect">Jetzt bewerben <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
@@ -395,12 +338,12 @@ Updater (Installer only):
             <img src="Logo_farbe.png" alt="Queens Circle Logo" class="footer-logo">
             
             <div class="footer-links">
-                <a href="index.html">Zurück</a>			
+                <a href="index.html">Zurück zur Startseite</a>
                 <a href="impressum.html">Impressum</a>
                 <a href="datenschutz.html">Datenschutz</a>
                 <a href="index.html#apply">Kontakt</a>
             </div>
-            <p class="copyright">&copy; Queens Circle – Dargelis & Goebel GbR. All Rights Reserved. <br>Exklusives Management für Adult Content Creator.</p>
+            <p class="copyright">&copy; Queens Circle – Dargelis & Goebel GbR. All Rights Reserved. <br>Exklusives Management für Creatorinnen.</p>
         </div>
     </footer>
 
