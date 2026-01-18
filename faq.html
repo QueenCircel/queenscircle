@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queens Circle | Häufige Fragen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* FAQ Spezifisches CSS */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            color: #d4af37;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Klasse für aktives Element */
+        .faq-item.active .faq-answer {
+            max-height: 300px; /* Genug Platz für den Text */
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-category {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: #d4af37;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <a href="index.html"><img src="Logo_farbe.png" alt="Queens Circle Logo" class="nav-logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="models.html">Success Stories</a></li>
+            <li><a href="faq.html" class="active-link" style="color: #d4af37;">FAQ</a></li>
+            <li><a href="index.html#performance">Leistung</a></li>
+            <li><a href="index.html#apply" class="btn-nav trigger-glow">Jetzt bewerben</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" style="min-height: 40vh; align-items: center;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-down">
+            <h1 class="gold-text">Klartext.</h1>
+            <p class="hero-subtitle">Du hast Fragen? Wir haben transparente Antworten. <br>Keine Tabus, keine versteckten Klauseln.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container faq-container">
+            
+            <h3 class="faq-category" data-aos="fade-right">Der Start & Kosten</h3>
+            
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Kostet mich der Einstieg etwas?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Nein. Absolut gar nichts. Wir investieren in dich (Fotoshootings, Technik, Marketing) in Vorleistung. Wir verdienen erst dann Geld, wenn du Geld verdienst (Provision). Das ist unser Risiko, nicht deines.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Brauche ich Vorerfahrung oder Profi-Equipment?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Nein. 80% unserer Top-Creatorinnen starteten als Anfängerinnen mit einem einfachen Smartphone. Wir zeigen dir, wie man Licht setzt und Winkel wählt. Später helfen wir beim Upgrade auf Profi-Technik.</p>
+                </div>
+            </div>
+
+            <h3 class="faq-category" data-aos="fade-right">Sicherheit & Anonymität</h3>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Muss ich mein Gesicht zeigen?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Nein, das ist allein deine Entscheidung. Wir haben sehr erfolgreiche "Faceless Creator", die nur Körperaufnahmen posten oder Masken tragen. Deine Grenzen werden zu 100% respektiert.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Können meine Nachbarn oder Familie das sehen?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Wir nutzen Geo-Blocking-Technologie. Das bedeutet, wir können deine Inhalte für ganze Länder (z.B. Deutschland), Bundesländer oder spezifische Städte sperren. So bleibst du in deiner Heimat unsichtbar.</p>
+                </div>
+            </div>
+
+            <h3 class="faq-category" data-aos="fade-right">Der Alltag</h3>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Was genau muss ich tun?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Deine Hauptaufgabe ist das Erstellen von Content (Fotos/kurze Videos) nach unseren Briefings. Den Rest – Chatten mit Fans, Posten, Marketing, Technik – übernehmen wir. Du bist das Talent, wir sind das Management.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Muss ich "alles" machen (Hardcore etc.)?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Auf keinen Fall. Du definierst am ersten Tag deine "No-Gos". Wenn du keine Nacktbilder machen willst, machen wir Dessous. Wenn du keinen expliziten Content willst, machen wir Teasing. Dein Körper, deine Regeln.</p>
+                </div>
+            </div>
+
+             <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Wie viel Zeit muss ich investieren?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Das hängt von deinen Zielen ab. Wir haben Models, die mit 1-2 Stunden am Tag sehr gut verdienen. Wir empfehlen für den Start ca. 10 Stunden pro Woche für Content-Produktion einzuplanen.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-padding section-darker" style="text-align: center;">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="section-title">Noch Fragen offen?</h2>
+            <p style="margin-bottom: 2rem; color: #ccc;">Lass uns einfach unverbindlich sprechen. Kein Druck, nur Informationen.</p>
+            <a href="index.html#apply" class="btn-main glow-effect">Gespräch vereinbaren <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <img src="Logo_farbe.png" alt="Queens Circle Logo" class="footer-logo">
+            <div class="footer-links">
+                <a href="index.html">Startseite</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="index.html#apply">Kontakt</a>
+            </div>
+            <p class="copyright">&copy; Queens Circle – Dargelis & Goebel GbR. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+
+        // Script für das Akkordeon
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Optional: Andere schließen, wenn einer geöffnet wird (Accordion-Effekt)
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle den aktuellen
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
