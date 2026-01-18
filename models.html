@@ -22,7 +22,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+.privacy-blur {
+    color: transparent;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.8); /* Goldener Schimmer */
+    user-select: none; /* Verhindert, dass man den Text markieren kann */
+    cursor: not-allowed;
+}
         /* Basis-Styling für das Icon */
         .service-item {
             font-size: 1.1rem;
@@ -214,7 +219,7 @@
                     </div>
                     <div class="model-info">
                         <h3 class="model-name">Velvet Rose</h3>
-                        <p class="category">Jahrgang '** • ****</p>
+                        <p class="category">Jahrgang '** • <span class="privacy-blur">Berlin</span></p>
                         
                         <div class="model-services">
                             <div class="service-item active" title="Webcam - Shows"><i class="fa-solid fa-video"></i></div>
